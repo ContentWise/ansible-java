@@ -1,0 +1,10 @@
+---
+- name: install openjdk-{{ java_version }}-jre 
+  apt:
+    name: openjdk-{{ java_version }}-jre 
+  when: ansible_os_family == 'Debian'
+
+- name: install java-1.{{ java_version }}.0-openjdk
+  yum:
+    name: java-1.{{ java_version }}.0-openjdk
+  when: ansible_os_family == 'RedHat'
