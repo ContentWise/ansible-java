@@ -30,3 +30,6 @@ provisioner:
 
 suites:
   - name: default
+  - name: java7
+    provisioner:
+      playbook: test/integration/java7.yml

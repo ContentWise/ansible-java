@@ -5,7 +5,7 @@
   [ "$status" -eq 0 ]
 }
 
-@test "Check symlink works for java8" {
-  run /opt/java8 -version
+@test "Check symlink works for java7" {
+  run /opt/java7 -version
   [ "$status" -eq 0 ]
 }

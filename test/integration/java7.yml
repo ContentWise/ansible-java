@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: yes
+  roles:
+    - role: contentwise.java
+      java_version: 7

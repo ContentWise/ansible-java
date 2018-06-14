@@ -1,0 +1,5 @@
+---
+
+redhat_java_version: "java-1.{{ java_version }}.0-openjdk"
+debian_java_version: "openjdk-{{ java_version }}-jre"
+java_symlink: "/opt/java{{ java_version }}"
