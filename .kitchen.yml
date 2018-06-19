@@ -35,3 +35,8 @@ suites:
       - ubuntu-16.04
     provisioner:
       playbook: test/integration/java7.yml
+  - name: java78
+    excludes: 
+      - ubuntu-16.04
+    provisioner:
+      playbook: test/integration/java78.yml
