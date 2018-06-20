@@ -1,9 +1,20 @@
 ---
 
+# Debian
+
 - name: install "{{ debian_java_version }}"
   apt:
     name: "{{ debian_java_version }}"
   when: ansible_os_family == 'Debian'
+
+- name: create symlink
+  file:
+    src: "{{ debian_java_path }}"
+    dest: "{{ java_symlink }}"
+    state: link
+  when: ansible_os_family == 'Debian'
+
+# RedHat
 
 - name: install "{{ redhat_java_version }}"
   yum:
@@ -12,6 +23,8 @@
 
 - name: create symlink
   file:
-    src: "{{ lookup('pipe', 'readlink -f $(which java)') }}"
+    src: "{{ redhat_java_path }}"
     dest: "{{ java_symlink }}"
     state: link
+  when: ansible_os_family == 'RedHat'
+
