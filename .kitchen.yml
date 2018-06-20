@@ -15,9 +15,10 @@ platforms:
       provision_command:
         - yum install net-tools -y
         - yum install iproute -y
-  - name: ubuntu-16.04
+  - name: ubuntu-18.04
     driver:
       run_command: /sbin/init
+      provision_command: mkdir -p /var/run/sshd
 
 provisioner:
   name: ansible_playbook
@@ -30,6 +31,8 @@ provisioner:
 
 suites:
   - name: default
+    excludes:
+      - centos-7
   - name: java7
     excludes: 
       - ubuntu-16.04
