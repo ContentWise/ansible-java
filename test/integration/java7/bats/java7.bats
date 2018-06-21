@@ -6,6 +6,6 @@
 }
 
 @test "Check symlink works for java7" {
-  run /opt/java7 -version
+  run /opt/java7/bin/java -version
   [ "$status" -eq 0 ]
 }
