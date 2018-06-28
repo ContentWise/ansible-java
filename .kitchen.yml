@@ -40,3 +40,4 @@ suites:
       - ubuntu-16.04
     provisioner:
       playbook: test/integration/java78.yml
+      idempotency_test: false
